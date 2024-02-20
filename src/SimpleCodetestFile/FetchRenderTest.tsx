@@ -26,7 +26,6 @@ function FetchRenderTest() {
 				errorHandler();
 			}
 		} catch (error) {
-			console.log({ error });
 			setIsError(true);
 		}
 	};
