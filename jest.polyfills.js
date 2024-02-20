@@ -10,21 +10,87 @@
 
 const { TextDecoder, TextEncoder, ReadableStream } = require("node:util");
 
-Object.defineProperties(globalThis, {
-	TextDecoder: { value: TextDecoder },
-	TextEncoder: { value: TextEncoder },
-	ReadableStream: { value: ReadableStream },
-});
+// Define TextDecoder, TextEncoder, and ReadableStream only if they don't already exist
+if (!globalThis.TextDecoder) {
+	Object.defineProperty(globalThis, "TextDecoder", {
+		value: TextDecoder,
+		configurable: true,
+		writable: true,
+	});
+}
+
+if (!globalThis.TextEncoder) {
+	Object.defineProperty(globalThis, "TextEncoder", {
+		value: TextEncoder,
+		configurable: true,
+		writable: true,
+	});
+}
+
+if (!globalThis.ReadableStream) {
+	Object.defineProperty(globalThis, "ReadableStream", {
+		value: ReadableStream,
+		configurable: true,
+		writable: true,
+	});
+}
 
 const { Blob, File } = require("node:buffer");
 const { fetch, Headers, FormData, Request, Response } = require("undici");
 
-Object.defineProperties(globalThis, {
-	fetch: { value: fetch, writable: true },
-	Blob: { value: Blob },
-	File: { value: File },
-	Headers: { value: Headers },
-	FormData: { value: FormData },
-	Request: { value: Request },
-	Response: { value: Response },
-});
+// Define Blob, File, fetch, Headers, FormData, Request, and Response only if they don't already exist
+if (!globalThis.Blob) {
+	Object.defineProperty(globalThis, "Blob", {
+		value: Blob,
+		configurable: true,
+		writable: true,
+	});
+}
+
+if (!globalThis.File) {
+	Object.defineProperty(globalThis, "File", {
+		value: File,
+		configurable: true,
+		writable: true,
+	});
+}
+
+if (!globalThis.fetch) {
+	Object.defineProperty(globalThis, "fetch", {
+		value: fetch,
+		configurable: true,
+		writable: true,
+	});
+}
+
+if (!globalThis.Headers) {
+	Object.defineProperty(globalThis, "Headers", {
+		value: Headers,
+		configurable: true,
+		writable: true,
+	});
+}
+
+if (!globalThis.FormData) {
+	Object.defineProperty(globalThis, "FormData", {
+		value: FormData,
+		configurable: true,
+		writable: true,
+	});
+}
+
+if (!globalThis.Request) {
+	Object.defineProperty(globalThis, "Request", {
+		value: Request,
+		configurable: true,
+		writable: true,
+	});
+}
+
+if (!globalThis.Response) {
+	Object.defineProperty(globalThis, "Response", {
+		value: Response,
+		configurable: true,
+		writable: true,
+	});
+}

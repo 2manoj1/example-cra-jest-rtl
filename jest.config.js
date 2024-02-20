@@ -182,6 +182,8 @@ module.exports = {
 		"/node_modules/date-fns/esm/locale.+\\.ts",
 		"\\\\node_modules\\\\",
 		"\\.pnp\\.[^\\\\]+$",
+		"./node_modules/@babel",
+		"./node_modules/@jest",
 	],
 
 	// An array of regexp pattern strings that are matched against all modules before the module loader will automatically return a mock for them
